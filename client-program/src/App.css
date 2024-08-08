@@ -1,0 +1,172 @@
+/* Variables */
+:root {
+  --baseColor: #398B93;
+  --borderRadius: 10px;
+  --padding: 10px;
+}
+
+body {
+  background-color: #b3d4d6;
+  box-sizing: border-box;
+  padding: 20px; /* Додаємо відступи до body */
+}
+
+.header {
+  background-color: #337f82;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.table-users {
+  border: 1px solid #337f82;
+  border-radius: var(--borderRadius);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Максимальна ширина таблиці */
+  margin: 1em auto;
+  overflow: hidden;
+  padding: 20px; /* Внутрішні відступи для таблиці */
+}
+
+table {
+  width: 100%;
+}
+
+td, th {
+  color: #2b7175;
+  padding: var(--padding);
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: center;
+  width: 200px;
+}
+
+th {
+  background-color: #d2e9ea;
+  font-weight: 300;
+}
+
+tr:nth-child(2n) {
+  background-color: white;
+}
+
+tr:nth-child(2n+1) {
+  background-color: #d8ebec;
+}
+
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  td:not(:first-child) {
+    clear: both;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+
+  td:not(:first-child):before {
+    color: #b3d4d6;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+
+  td:nth-child(2):before {
+    content: 'Name:';
+  }
+
+  td:nth-child(3):before {
+    content: 'Email:';
+  }
+
+  td:nth-child(4):before {
+    content: 'Phone:';
+  }
+
+  td:nth-child(5):before {
+    content: 'Comments:';
+  }
+
+  tr {
+    padding: var(--padding) 0;
+    position: relative;
+  }
+
+  tr:first-child {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    background-color: transparent;
+    color: #d8ebec;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  td:first-child {
+    background-color: #d2e9ea;
+    border-bottom: 1px solid #b3d4d6;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    width: 100%;
+  }
+
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+
+  td:not(:first-child):before {
+    font-size: 0.8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+
+  td:last-child {
+    padding-bottom: 1rem !important;
+    width: 100%;
+  }
+
+  tr {
+    background-color: white !important;
+    border: 1px solid #b3d4d6;
+    border-radius: var(--borderRadius);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    margin: 1em auto; /* Відступи для мобільного перегляду */
+    width: calc(100% - 40px); /* Відступи з обох боків */
+  }
+}
